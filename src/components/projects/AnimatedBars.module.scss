@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/animations.scss";
+
+.bar {
+  background: $color-white;
+  width: 2vh;
+  height: 12vh;
+  align-self: center;
+  justify-self: center;
+  border-radius: 50rem;
+  transform: translateY(-2.5em);
+  &:hover {
+    background-color: $color-red;
+  }
+}
+
+.bar1 {
+  @extend .bar;
+  -webkit-animation: float 2s infinite linear;
+  animation: float 2s infinite linear;
+}
+.bar2 {
+  @extend .bar;
+  -webkit-animation: float 2s infinite linear 0.35s;
+  animation: float 2s infinite linear 0.35s;
+}
+.bar3 {
+  @extend .bar;
+  -webkit-animation: float 2s infinite linear 0.7s;
+  animation: float 2s infinite linear 0.7s;
+}
+.bar4 {
+  @extend .bar;
+  -webkit-animation: float 2s infinite linear 1.05s;
+  animation: float 2s infinite linear 1.05s;
+}
+
+.isHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.tabHover {
+  background-color: $color-red;
+  animation-play-state: paused;
+}

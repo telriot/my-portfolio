@@ -1,0 +1,29 @@
+$breakpoints: (
+  xl: 87.5em,
+  lg: 72em,
+  md: 62em,
+  sm: 48em,
+  xs: 36em,
+  tn: 22.5em,
+);
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+@mixin container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  display: grid;
+}

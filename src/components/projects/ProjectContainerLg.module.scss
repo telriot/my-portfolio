@@ -1,0 +1,91 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/animations.scss";
+
+.projectContainer {
+  grid-column: 2/-1;
+  grid-row: 1/-1;
+  padding: 8vw 12vw;
+  transition: transform $speed-2, opacity $speed-2 $speed-2;
+
+  @include respond("lg") {
+    padding: 4vw 6vw;
+  }
+}
+
+.isVisible {
+  transform-origin: left;
+  transform: translateX(0%);
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+  transition: transform $speed-2, opacity $speed-2 $speed-2;
+  @include respond("lg") {
+    transform: translateX(0%);
+    transition: opacity $speed-1 $speed-2;
+  }
+}
+.isHidden {
+  transform-origin: left;
+  transform: translateX(100%);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 0;
+  @include respond("lg") {
+    transform: translateX(0%);
+    transition: opacity $speed-1;
+  }
+}
+
+.projectImage {
+  margin-bottom: 5vw;
+  transition: all $speed-2;
+  width: 100%;
+}
+.projectTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3vw;
+  color: $color-black;
+  z-index: 10;
+  @include respond("md") {
+    font-size: 4.6rem;
+  }
+}
+.projectText {
+  color: $color-black;
+  font-size: 2.1rem;
+  font-weight: 400;
+
+  margin-bottom: 4rem;
+  z-index: 9;
+}
+.buttonDiv {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+
+  font-size: 2.3rem;
+  z-index: 10;
+
+  button {
+    background: $color-black;
+    padding: 0.8vh 6vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-white;
+    border: 0px solid black;
+    outline: none;
+    transition: all $speed-1;
+
+    @include respond("lg") {
+      padding: 0.8vh 4.5vw;
+    }
+    &:hover {
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+}

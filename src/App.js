@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react"
+import About from "./components/about/About"
+import Contact from "./components/contact/Contact"
+import LandingSplit from "./components/landing/LandingSplit"
+import ProjectsSm from "./components/projects/ProjectsSm"
+import Projects from "./components/projects/Projects"
+import ProjectsLg from "./components/projects/ProjectsLg"
+import { WindowSizeContext } from "./contexts/windowSizeContext"
 
 function App() {
+  const { isSM, isLG } = useContext(WindowSizeContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+      <LandingSplit />
+      {!isSM ? (
+        <ProjectsSm />
+      ) : !isLG ? (
+        <Projects />
+      ) : isLG ? (
+        <ProjectsLg />
+      ) : null}
+      <About />
+
+      <Contact />
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default App

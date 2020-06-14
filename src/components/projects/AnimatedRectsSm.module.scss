@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/animations.scss";
+
+.rect {
+  position: absolute;
+  background: $color-independence;
+  top: 45%;
+  height: 6vh;
+  width: 6vh;
+  border-radius: 2px;
+  z-index: 1000;
+  &:hover {
+    background-color: $color-red;
+  }
+}
+
+.rect1 {
+  @extend .rect;
+  transform: translate(-4vh, -4vh);
+  -webkit-animation: pulse 3s infinite linear;
+  animation: pulse 3s infinite linear;
+}
+.rect4 {
+  @extend .rect;
+  transform: translate(-4vh, 4vh);
+
+  -webkit-animation: pulse 3s infinite linear 0.5s;
+  animation: pulse 3s infinite linear 0.5s;
+}
+.rect3 {
+  @extend .rect;
+  transform: translate(4vh, 4vh);
+  -webkit-animation: pulse 3s infinite linear 1s;
+  animation: pulse 3s infinite linear 1s;
+}
+.rect2 {
+  @extend .rect;
+  transform: translate(4vh, -4vh);
+
+  -webkit-animation: pulse 3s infinite linear 1.5s;
+  animation: pulse 3s infinite linear 1.5s;
+}
+
+.isHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.tabHover {
+  background-color: $color-red;
+  animation-play-state: paused;
+}

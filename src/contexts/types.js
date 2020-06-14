@@ -1,0 +1,4 @@
+export const TYPES = {
+  SET_ACTIVE_PROJECT: "SET_ACTIVE_PROJECT",
+  SET_HOVER: "SET_HOVER",
+}

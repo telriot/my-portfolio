@@ -1,0 +1,60 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/animations.scss";
+.container {
+  @include container;
+  position: relative;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(4, 1fr);
+  background: $color-white;
+  z-index: 1;
+}
+
+.sidebar {
+  position: relative;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: $color-black;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  ul {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+  }
+}
+.header {
+  font-size: 6rem;
+  color: $color-white;
+
+  text-transform: uppercase;
+  text-align: center;
+}
+.animatedRects {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-content: center;
+  justify-content: center;
+}
+.listItem {
+  font-size: 4rem;
+  font-weight: 700;
+  color: $color-independence;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  transition: all $speed-2;
+  cursor: pointer;
+}
+.listItemHover {
+  color: $color-white;
+}

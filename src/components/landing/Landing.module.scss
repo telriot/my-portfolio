@@ -1,0 +1,43 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+.container {
+  @include container;
+  grid-template-columns: [lg-start]4vw[lg-end main-start] 1fr[main-end rg-start] 4vw[rg-end];
+  grid-template-rows: [top-start]21vh[top-end main-start] 1fr[main-end bottom-start] 20vh[bottom-end];
+  @include respond("xs") {
+    grid-template-columns: [lg-start]6vw[lg-end main-start] 1fr[main-end rg-start] 6vw[rg-end];
+  }
+  @include respond("sm") {
+    grid-template-columns: [lg-start]12vw[lg-end main-start] 1fr[main-end rg-start] 12vw[rg-end];
+  }
+  @include respond("lg") {
+    grid-template-columns: [lg-start]20vw[lg-end main-start] 1fr[main-end rg-start] 20vw[rg-end];
+  }
+
+  background-color: $color-white;
+}
+.header {
+  grid-column: main-start/main-end;
+  grid-row: main-start/main-end;
+  color: $color-black;
+
+  h1 {
+    font-size: 3.2rem;
+    @include respond("tn") {
+      font-size: 3.8rem;
+    }
+    @include respond("xs") {
+      font-size: 5.2rem;
+    }
+    @include respond("sm") {
+      font-size: 6rem;
+    }
+    @include respond("lg") {
+      font-size: 7rem;
+      line-height: 8.5rem;
+    }
+  }
+  span {
+    color: $color-red;
+  }
+}

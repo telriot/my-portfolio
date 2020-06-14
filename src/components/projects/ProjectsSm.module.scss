@@ -1,0 +1,263 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+.container {
+  @include container;
+  grid-template-columns: [lg-start]5vw[lg-end main-start] 1fr[main-end rg-start] 5vw[rg-end];
+  grid-template-rows: [top-start nav-start ]9em[top-end main-start] 1.2fr [half]0.8fr[main-end bottom-start] 5vw[bottom-end];
+}
+.barContainer {
+  grid-column: main-start/main-end;
+  grid-row: half/main-end;
+  width: 13vh;
+  height: 100%;
+  justify-self: flex-end;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.mainText {
+  grid-column: lg-start/main-end;
+  grid-row: main-start/half;
+  padding: 20vh 10vh 0vh 5vh;
+  color: $color-white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: $color-black;
+  transition: opacity 0.3s 0.15s;
+  z-index: 10;
+  @include respond("tn") {
+    font-size: 1.9rem;
+  }
+  @include respond("xs") {
+    margin-bottom: 7rem;
+    font-size: 2.4rem;
+  }
+  @include respond("sm") {
+    font-size: 3.2rem;
+  }
+  @include respond("lg") {
+    font-size: 6rem;
+    line-height: 8.5rem;
+  }
+}
+.backGround {
+  width: 100%;
+  height: 100%;
+  transition: transform $speed-2;
+}
+.bgLeft {
+  @extend .backGround;
+  grid-column: lg-start/rg-start;
+  grid-row: 1/-1;
+  transform-origin: left;
+}
+.bgRight {
+  @extend .backGround;
+  grid-column: lg-end/rg-end;
+  grid-row: 1/-1;
+  justify-self: flex-end;
+  transform-origin: right;
+}
+.bgTop {
+  @extend .backGround;
+  grid-column: 1/-1;
+  grid-row: top-start/bottom-start;
+  align-self: flex-start;
+  transform-origin: top;
+}
+.bgBottom {
+  @extend .backGround;
+  grid-column: 1/-1;
+  grid-row: top-start/bottom-end;
+  align-self: flex-end;
+  transform-origin: bottom;
+}
+
+.projectContainer {
+  grid-column: main-start/main-end;
+  grid-row: main-start/main-end;
+  margin-top: 2rem;
+  padding-right: 5vw;
+  z-index: 10;
+}
+
+.projectContainerRight {
+  @extend .projectContainer;
+  padding-right: 0;
+  padding-left: 5vw;
+}
+.projectContainerCenter {
+  @extend .projectContainer;
+  padding: 0;
+}
+.projectImage {
+  margin-bottom: 10vw;
+  transition: all $speed-2;
+  width: 100%;
+}
+
+.projectTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-left: 5vw;
+  margin-bottom: 1rem;
+  transition: padding $speed-1;
+  z-index: 10;
+  @include respond("tn") {
+    font-size: 3.2rem;
+  }
+  @include respond("xs") {
+    font-size: 3.6rem;
+  }
+  @include respond("sm") {
+    font-size: 5rem;
+  }
+  @include respond("lg") {
+    font-size: 6rem;
+    line-height: 8.5rem;
+  }
+}
+.projectText {
+  color: $color-black;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 0 2vw;
+  margin-bottom: 4rem;
+  z-index: 10;
+
+  @include respond("tn") {
+    font-size: 1.9rem;
+  }
+  @include respond("xs") {
+    margin-bottom: 7rem;
+    font-size: 2.1rem;
+  }
+  @include respond("sm") {
+    font-size: 3.2rem;
+  }
+  @include respond("lg") {
+    font-size: 6rem;
+    line-height: 8.5rem;
+  }
+}
+.buttonDiv {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin: 0 2vw 5vw 2vw;
+  z-index: 10;
+  @include respond("tn") {
+    font-size: 2.1rem;
+  }
+  @include respond("xs") {
+    margin-bottom: 7rem;
+    font-size: 2.6rem;
+  }
+  button {
+    background: $color-black;
+    padding: 0.8vh 7vw;
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-white;
+    border: 0px solid black;
+    outline: none;
+    transition: all $speed-1;
+    &:hover {
+      background: $color-red;
+    }
+    @include respond("tn") {
+      font-size: 2.1rem;
+    }
+    @include respond("xs") {
+      margin-bottom: 7rem;
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.buttonBlack {
+  @extend .buttonDiv;
+
+  button {
+    background: $color-white;
+
+    color: $color-black;
+    border: 1px solid $color-black;
+    &:hover {
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+}
+.buttonWhite {
+  @extend .buttonBlack;
+
+  button {
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+.bgHidden {
+  opacity: 0;
+  transform: scaleX(0);
+  visibility: hidden;
+  z-index: 0;
+}
+.bgVisible {
+  transform: scaleX(1);
+  visibility: visible;
+  opacity: 1;
+  z-index: 0;
+}
+.bgHiddenY {
+  transform: scaleY(0);
+  visibility: none;
+  opacity: 0;
+  z-index: 0;
+}
+.bgVisibleY {
+  transform: scaleY(1);
+  visibility: visible;
+  opacity: 1;
+  z-index: 0;
+}
+
+.bgBlack {
+  background: $color-black;
+}
+
+.bgRed {
+  background: $color-red;
+}
+.bgWhite {
+  background: $color-white;
+}
+.textBlack {
+  color: $color-black;
+}
+.textRed {
+  color: $color-red;
+}
+.textWhite {
+  color: $color-white;
+}
+
+.isVisible {
+  opacity: 1;
+  visibility: visible;
+
+  transition: all 0.3s;
+  transition-delay: 0.3s;
+}
+.isHidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+}

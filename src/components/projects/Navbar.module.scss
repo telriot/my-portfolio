@@ -1,0 +1,106 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+.navbar {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  height: 9em;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  @include respond("sm") {
+    height: 12em;
+  }
+}
+.navList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  position: relative;
+  white-space: nowrap;
+  @include respond("tn") {
+    font-size: 1.2rem;
+  }
+  @include respond("xs") {
+    font-size: 1.9rem;
+    width: 95%;
+  }
+  @include respond("sm") {
+    font-size: 6rem;
+  }
+  @include respond("lg") {
+    font-size: 7rem;
+    line-height: 8.5rem;
+  }
+}
+.listItem {
+  color: $color-independence;
+  text-align: center;
+  z-index: 10;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.listItem1 {
+  grid-row: 1/-1;
+  grid-column: 1/2;
+}
+.listItem2 {
+  grid-row: 1/-1;
+  grid-column: 2/3;
+}
+.listItem3 {
+  grid-row: 1/-1;
+  grid-column: 3/4;
+}
+.listItem4 {
+  grid-row: 1/-1;
+  grid-column: 4/5;
+}
+
+.hoverText {
+  position: absolute;
+  color: $color-independence;
+  font-size: 2rem;
+  top: 7rem;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+
+  transform: translateY(0rem);
+  opacity: 1;
+  visibility: visible;
+  transition: transform $speed-1, color $speed-2;
+  z-index: 100;
+}
+.hoverTextWhite {
+  color: rgba($color-red, 0.5);
+}
+
+.hoverTextHidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-1.5rem);
+}
+.textBlack {
+  color: $color-black;
+}
+.textRed {
+  color: $color-red !important;
+}
+.textWhite {
+  color: $color-white;
+}
+.listItemHovered {
+  color: rgba($color-red, 0.5);
+}
+.listItemHoveredDark {
+  color: $color-independence;
+}

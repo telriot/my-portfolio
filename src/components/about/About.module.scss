@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+.container {
+  @include container;
+  grid-template-columns: [lg-start]0[lg-end main-start] 1fr[main-end rg-start] 0[rg-end];
+  grid-template-rows: [header-start]30vh [header-end main-start] 1fr[main-end bottom-start] 15vh[bottom-end];
+  @include respond("xs") {
+    grid-template-columns: [lg-start]5vw[lg-end main-start] 1fr[main-end rg-start] 5vw[rg-end];
+  }
+  background-color: $color-grey;
+}
+.header {
+  grid-column: main-start/main-end;
+  grid-row: header-start/header-end;
+  color: $color-black;
+  text-transform: uppercase;
+  font-size: 3.8rem;
+  align-self: center;
+  justify-self: center;
+}

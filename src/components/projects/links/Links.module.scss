@@ -1,0 +1,91 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: [left-start]30%[left-end center-start] 40%[center-end right-start] 30%[right-end];
+  margin-bottom: 1rem;
+  @include respond("sm") {
+    width: 100%;
+    height: 100%;
+  }
+}
+.overlay {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: flex-end;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  background-color: rgba($color-white, 0.9);
+  height: 100%;
+  max-height: 100%;
+  width: 5%;
+  padding: 2rem 0;
+  z-index: 10;
+  transition: width 0.3s;
+}
+.overlayHover {
+  width: 15%;
+}
+.overlaySpread {
+  width: 100%;
+}
+
+.icon {
+  max-width: 100%;
+  max-height: 100%;
+  justify-self: center;
+  align-self: center;
+  padding: 0.4rem;
+}
+.img {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  @include respond("tn") {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+}
+.gitContainer {
+  grid-column: 1/-1;
+  grid-row: 4 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $color-red;
+  }
+}
+
+.github {
+  max-height: 100%;
+}
+.webContainer {
+  grid-column: 1/-1;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  &:hover {
+    background: $color-red;
+  }
+}
+.website {
+  max-height: 100%;
+}
+.websiteText {
+  font-size: 2rem;
+}
+
+.isHidden {
+  display: none;
+}
+.isVisible {
+  display: flex;
+}

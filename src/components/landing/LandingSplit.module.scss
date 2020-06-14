@@ -1,0 +1,141 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/animations.scss";
+.container {
+  @include container;
+  background-color: $color-white;
+}
+.header {
+  display: grid;
+  grid-template-columns: [left-header-start]1fr[left-header-end right-header-start] 1fr[right-header-end];
+  grid-template-rows: [top-start]30vh[top-end main-start] max-content[main-end center-start]max-content[center-end mainTwo-start] 1fr [mainTwo-end bottom-start]3vh[bottom-end];
+  color: $color-black;
+  align-items: flex-end;
+  transition: all $speed-2;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    @include respond("tn") {
+      font-size: 3.8rem;
+    }
+    @include respond("xs") {
+      font-size: 5.2rem;
+    }
+    @include respond("sm") {
+      font-size: 6rem;
+    }
+    @include respond("lg") {
+      font-size: 7rem;
+      line-height: 8.5rem;
+    }
+  }
+}
+//Backgrounds
+.bgLeft,
+.bgRight {
+  grid-row: top-start/bottom-end;
+  background-color: $color-red;
+  height: 100%;
+  width: 100%;
+  transform: scaleY(0);
+  transition: transform $speed-2;
+  z-index: 0;
+}
+
+.bgLeft {
+  grid-column: left-header-start/left-header-end;
+
+  transform-origin: top;
+}
+.bgRight {
+  grid-column: right-header-start/right-header-end;
+  transform-origin: bottom;
+}
+.bgVisible {
+  transform: scaleY(1);
+}
+.bgScrolled {
+  background-color: $color-white;
+  transition: all $speed-2;
+}
+//Center
+.headerCenter {
+  grid-row: center-start/center-end;
+  grid-column: 1/-1;
+  justify-self: center;
+  transition: all $speed-1;
+  z-index: 10;
+}
+.headerCenterLeft,
+.headerCenterRight {
+  grid-row: center-start/center-end;
+  padding: 0 4vw;
+  color: $color-red;
+  transition: all $speed-1;
+  z-index: 10;
+}
+//Sides
+.sideHeader {
+  margin: 0 4vw;
+  transition: all $speed-1;
+  z-index: 10;
+}
+.headerLeft,
+.headerRight {
+  @extend .sideHeader;
+  grid-row: main-start/main-end;
+}
+.headerLeftBottom,
+.headerRightBottom {
+  @extend .sideHeader;
+  grid-row: mainTwo-start/mainTwo-end;
+  align-self: flex-start;
+}
+//More span
+.more {
+  grid-column: right-header-start/right-header-end;
+  grid-row: mainTwo-start/mainTwo-end;
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-right: 5vw;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  transform-origin: right;
+  transform: rotate(90deg);
+  transition: all $speed-2;
+  z-index: 10;
+}
+.moreFall {
+  -webkit-animation: bounce-top 1s both;
+  animation: bounce-top 1s both;
+}
+//Colors
+.colorBlack {
+  color: $color-black;
+}
+.colorRed {
+  color: $color-red;
+}
+.colorWhite {
+  color: $color-white;
+}
+//Position
+.isLeftSide {
+  grid-column: left-header-start/left-header-end;
+}
+.isRightSide {
+  grid-column: right-header-start/right-header-end;
+  text-align: right;
+}
+//Visibility
+.isHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.isVisible {
+  opacity: 1;
+  visibility: visible;
+}

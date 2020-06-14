@@ -1,0 +1,7 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+.container {
+  @include container;
+  min-height: 20vh;
+  background-color: $color-black;
+}
