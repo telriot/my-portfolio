@@ -7,7 +7,7 @@ let cx = classNames.bind(styles)
 
 function AnimatedRects() {
   const { state, projectHandlers } = useContext(AppContext)
-  const { hover } = state
+  const { activeProject, hover } = state
   const { handleClick, handleMouseEnter, handleMouseLeave } = projectHandlers
 
   const rectClass = (num) =>
@@ -17,6 +17,7 @@ function AnimatedRects() {
       rect3: num === 3,
       rect4: num === 4,
       tabHover: hover === num,
+      tabSelected: activeProject === num,
     })
 
   return (

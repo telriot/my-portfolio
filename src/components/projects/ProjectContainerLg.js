@@ -1,8 +1,11 @@
 import React, { useContext } from "react"
 import classNames from "classnames/bind"
 import styles from "./ProjectContainerLg.module.scss"
-import BookClub from "./links/BookClub"
+import ProjectImage from "./links/ProjectImage"
 import { AppContext } from "../../contexts/appContext"
+import { icons } from "../../assets/icons/index"
+
+import { projects } from "../../assets/text/Projects"
 
 let cx = classNames.bind(styles)
 
@@ -22,22 +25,30 @@ function ProjectContainerLg(props) {
   let projectImage = cx({
     projectImage: true,
   })
-  let projectText = cx({
-    projectText: true,
-  })
+
   let buttonDiv = cx({
     buttonDiv: true,
   })
   return (
     <div className={projectContainer}>
-      <h3 className={projectTitle}>Book Club</h3>
-      <BookClub className={projectImage} />
+      <div classname={styles.titleDiv}>
+        <>
+          <h3 className={projectTitle}>{projects[tile].title}</h3>
+          <div className={styles.iconDiv}>
+            {icons[tile].map((icon, index) => (
+              <img
+                className={styles.icon}
+                src={icons[tile][index]}
+                key={`icon-${index}`}
+                alt={`icon-${index}`}
+              ></img>
+            ))}
+          </div>
+        </>
+      </div>
 
-      <p className={projectText}>
-        Sint magna pariatur ad velit magna consectetur cupidatat. Do nisi ut
-        aute exercitation adipisicing in proident enim amet voluptate ex laboris
-        duis.
-      </p>
+      <ProjectImage tile={tile} className={projectImage} />
+
       <div className={buttonDiv}>
         <button>Github</button>
         <button>Website</button>

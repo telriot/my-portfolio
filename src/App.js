@@ -8,11 +8,11 @@ import ProjectsLg from "./components/projects/ProjectsLg"
 import { WindowSizeContext } from "./contexts/windowSizeContext"
 
 function App() {
-  const { isSM, isLG } = useContext(WindowSizeContext)
+  const { isXS, isSM, isLG } = useContext(WindowSizeContext)
   return (
     <React.Fragment>
       <LandingSplit />
-      {!isSM ? (
+      {!isXS ? (
         <ProjectsSm />
       ) : !isLG ? (
         <Projects />

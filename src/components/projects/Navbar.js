@@ -21,8 +21,8 @@ function Navbar() {
   let listItem1 = cx({
     listItem: true,
     listItem1: true,
-    textWhite: activeProject % 2 === 0,
-    textBlack: activeProject === 3,
+    textWhite: !activeProject,
+    textBlack: activeProject !== 1,
     textRed: activeProject === 1,
     listItemHovered: activeProject % 2 === 1 && hover === 1,
     listItemHoveredDark: activeProject % 2 === 0 && hover === 1,
@@ -30,9 +30,10 @@ function Navbar() {
   let listItem2 = cx({
     listItem: true,
     listItem2: true,
-    textBlack: activeProject % 2 === 1,
+    textWhite: !activeProject,
+
+    textBlack: activeProject !== 2,
     textRed: activeProject === 2,
-    textWhite: activeProject === 4 || activeProject === 0,
 
     listItemHovered: activeProject % 2 === 1 && hover === 2,
     listItemHoveredDark: activeProject % 2 === 0 && hover === 2,
@@ -40,18 +41,20 @@ function Navbar() {
   let listItem3 = cx({
     listItem: true,
     listItem3: true,
-    textBlack: activeProject === 1,
+    textWhite: !activeProject,
+
+    textBlack: activeProject !== 3,
     textRed: activeProject === 3,
-    textWhite: activeProject % 2 === 0,
     listItemHovered: activeProject % 2 === 1 && hover === 3,
     listItemHoveredDark: activeProject % 2 === 0 && hover === 3,
   })
   let listItem4 = cx({
     listItem: true,
     listItem4: true,
-    textBlack: activeProject % 2 === 1,
+    textWhite: !activeProject,
+
+    textBlack: activeProject !== 4,
     textRed: activeProject === 4,
-    textWhite: activeProject === 2 || activeProject === 0,
     listItemHovered: activeProject % 2 === 1 && hover === 4,
     listItemHoveredDark: activeProject % 2 === 0 && hover === 4,
   })

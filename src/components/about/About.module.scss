@@ -2,19 +2,62 @@
 @import "../../styles/mixins.scss";
 .container {
   @include container;
-  grid-template-columns: [lg-start]0[lg-end main-start] 1fr[main-end rg-start] 0[rg-end];
-  grid-template-rows: [header-start]30vh [header-end main-start] 1fr[main-end bottom-start] 15vh[bottom-end];
-  @include respond("xs") {
-    grid-template-columns: [lg-start]5vw[lg-end main-start] 1fr[main-end rg-start] 5vw[rg-end];
+  grid-template-columns: [lg-start]2.5rem[lg-end main-start] 1fr[main-end rg-start] 2.5rem[rg-end];
+  grid-template-rows: [header-start]25vh [header-end main-start] 1fr[main-end bottom-start] 12vh[bottom-end];
+  @include respond("tn") {
+    grid-template-columns: [lg-start]6vw[lg-end main-start] 1fr[main-end rg-start] 6vw[rg-end];
   }
-  background-color: $color-grey;
+  @include respond("xs") {
+    grid-template-columns: [lg-start]8vw[lg-end main-start] 1fr[main-end rg-start] 8vw[rg-end];
+  }
+  @include respond("sm") {
+    grid-template-columns: [lg-start]12vw[lg-end main-start] 1fr[main-end rg-start] 12vw[rg-end];
+  }
+  @include respond("md") {
+    grid-template-columns: [lg-start]20vw[lg-end main-start] 1fr[main-end rg-start] 20vw[rg-end];
+  }
+  background-color: $color-white;
+  min-height: 85vh;
 }
 .header {
   grid-column: main-start/main-end;
   grid-row: header-start/header-end;
   color: $color-black;
-  text-transform: uppercase;
   font-size: 3.8rem;
+  font-weight: 200;
   align-self: center;
   justify-self: center;
+  @include respond("xs") {
+    font-size: 3.8rem;
+  }
+  @include respond("sm") {
+    font-size: 5rem;
+  }
+  @include respond("md") {
+    font-size: 6rem;
+  }
+  @include respond("lg") {
+    font-size: 6rem;
+  }
+}
+.text {
+  grid-column: main-start/main-end;
+  grid-row: main-start/main-end;
+  font-size: 1.4rem;
+  font-weight: 300;
+  @include respond("tn") {
+    font-size: 1.6rem;
+  }
+  @include respond("xs") {
+    font-size: 2rem;
+  }
+  @include respond("sm") {
+    font-size: 2rem;
+  }
+  @include respond("md") {
+    font-size: 2rem;
+  }
+  @include respond("lg") {
+    font-size: 2.4rem;
+  }
 }

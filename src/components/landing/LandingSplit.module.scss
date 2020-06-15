@@ -4,6 +4,7 @@
 .container {
   @include container;
   background-color: $color-white;
+  min-height: 100vh;
 }
 .header {
   display: grid;

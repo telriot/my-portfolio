@@ -1,0 +1,163 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+.projectContainer {
+  grid-column: main-start/main-end;
+  grid-row: main-start/main-end;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.projectImage {
+  margin-bottom: 5rem;
+  transition: all $speed-2;
+  width: 95%;
+  align-self: center;
+  border-radius: 0.8rem;
+  border: 1rem solid $color-black;
+  box-shadow: 1.2rem 1.2rem 2rem rgba($color-black, 0.8);
+}
+.borderWhite {
+  border: 1rem solid $color-white;
+  box-shadow: 1.2rem 1.2rem 2rem rgba(black, 0.8);
+}
+.descriptionDiv {
+  padding: 0 2rem;
+}
+.projectTitle {
+  font-size: 3.5rem;
+  align-self: center;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  transition: padding $speed-1;
+  z-index: 10;
+  @include respond("tn") {
+    font-size: 4rem;
+  }
+}
+.projectText {
+  color: $color-black;
+  font-size: 1.4rem;
+  font-weight: 400;
+  z-index: 10;
+  text-align: center;
+
+  @include respond("tn") {
+    font-size: 1.5rem;
+  }
+  @include respond("xs") {
+    font-size: 2.1rem;
+  }
+}
+
+.iconDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+.icon {
+  height: 45px;
+  transition: filter $speed-2;
+  filter: grayscale(95%);
+  &:hover {
+    filter: grayscale(0%);
+  }
+  @include respond("tn") {
+    height: 50px;
+  }
+}
+.iconMobile {
+  filter: grayscale(0%);
+}
+.buttonDiv {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  padding: 2rem 1rem;
+  z-index: 10;
+  @include respond("tn") {
+    font-size: 2.1rem;
+  }
+  @include respond("xs") {
+    margin-bottom: 7rem;
+    font-size: 2.6rem;
+  }
+  button {
+    background: $color-black;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: $color-white;
+    border: 0px solid black;
+    outline: none;
+    transition: all $speed-1;
+    box-shadow: 0.4rem 0.4rem 0.75rem rgba($color-black, 0.5);
+    &:hover {
+      background: $color-red;
+    }
+    @include respond("tn") {
+      font-size: 2.1rem;
+    }
+    @include respond("xs") {
+      margin-bottom: 7rem;
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.buttonBlack {
+  @extend .buttonDiv;
+
+  button {
+    background: $color-white;
+    color: $color-black;
+    box-shadow: 0.4rem 0.4rem 0.75rem rgba(black, 0.5);
+
+    &:hover {
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+}
+.buttonWhite {
+  @extend .buttonBlack;
+
+  button {
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+.isVisible {
+  opacity: 1;
+  visibility: visible;
+
+  transition: all 0.3s;
+  transition-delay: 0.3s;
+}
+.isHidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+}
+.bgBlack {
+  background: $color-black;
+}
+
+.bgRed {
+  background: $color-red;
+}
+.bgWhite {
+  background: $color-white;
+}
+.textBlack {
+  color: $color-black;
+}
+.textRed {
+  color: $color-red;
+}
+.textWhite {
+  color: $color-white;
+}

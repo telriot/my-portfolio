@@ -17,12 +17,20 @@ function ProjectsXl() {
     cx({
       listItem: true,
       listItemHover: hover === num,
+      textWhite: activeProject === num,
     })
+  const mainText = cx({
+    mainText: true,
+    isVisible: !activeProject,
+    isHidden: activeProject,
+  })
 
   return (
     <section className={styles.container}>
       <div className={styles.sidebar}>
-        <h2 className={header}>Projects</h2>
+        <h2 className={header} onClick={handleClick(0)}>
+          Projects
+        </h2>
         <div className={styles.animatedRects}>
           <AnimatedRects handleClick={handleClick} />
         </div>
@@ -61,6 +69,14 @@ function ProjectsXl() {
             Something
           </li>
         </ul>
+      </div>
+      <div className={mainText}>
+        <p>
+          Tempor ipsum non qui magna. Excepteur duis commodo culpa tempor et
+          laboris magna ad. Occaecat culpa eiusmod mollit ex Lorem minim et
+          tempor reprehenderit nulla occaecat amet ex do. Voluptate ut eiusmod
+          mollit labore enim.
+        </p>
       </div>
       <ProjectContainerLg tile={1} activeProject={activeProject} />
       <ProjectContainerLg tile={2} activeProject={activeProject} />

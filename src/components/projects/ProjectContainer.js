@@ -1,8 +1,11 @@
 import React, { useContext } from "react"
 import { AppContext } from "../../contexts/appContext"
-import BookClub from "./links/BookClub"
-import styles from "./ProjectsSm.module.scss"
+import ProjectImage from "./links/ProjectImage"
+import styles from "./ProjectContainer.module.scss"
 import classNames from "classnames/bind"
+import { projects } from "../../assets/text/Projects"
+import { icons } from "../../assets/icons/index"
+import { isBrowser, isMobile } from "react-device-detect"
 
 let cx = classNames.bind(styles)
 
@@ -18,25 +21,25 @@ function ProjectContainer(props) {
           projectContainer: true,
           isVisible: activeProject === 1,
           isHidden: activeProject !== 1,
-          textWhite: true,
+          textBlack: true,
         })
       case 2:
         return cx({
-          projectContainerRight: true,
+          projectContainer: true,
           isVisible: activeProject === 2,
           isHidden: activeProject !== 2,
-          textWhite: true,
+          textBlack: true,
         })
       case 3:
         return cx({
-          projectContainerCenter: true,
+          projectContainer: true,
           isVisible: activeProject === 3,
           isHidden: activeProject !== 3,
           textBlack: true,
         })
       case 4:
         return cx({
-          projectContainerCenter: true,
+          projectContainer: true,
           isVisible: activeProject === 4,
           isHidden: activeProject !== 4,
           textBlack: true,
@@ -47,30 +50,42 @@ function ProjectContainer(props) {
   }
   let projectTitle = cx({
     projectTitle: true,
-    textBlack: activeProject === 1 || activeProject === 3,
-    textWhite: activeProject === 2 || activeProject === 4,
+    textBlack: true,
   })
   let projectImage = cx({
     projectImage: true,
+    textBlack: true,
   })
   let projectText = cx({
     projectText: true,
-    textBlack: activeProject === 1 || activeProject === 3,
-    textWhite: activeProject === 2 || activeProject === 4,
+    textBlack: true,
   })
   let buttonDiv = cx({
-    buttonDiv: activeProject === 1 || activeProject === 3,
-    buttonBlack: activeProject === 2 || activeProject === 4,
+    buttonDiv: true,
+  })
+  let iconClass = cx({
+    icon: true,
+    iconMobile: isMobile,
   })
   return (
     <div className={containerClassSelector(tile)}>
-      <BookClub className={projectImage} />
-      <h3 className={projectTitle}>Book Club</h3>
-      <p className={projectText}>
-        Sint magna pariatur ad velit magna consectetur cupidatat. Do nisi ut
-        aute exercitation adipisicing in proident enim amet voluptate ex laboris
-        duis.
-      </p>
+      <h3 className={projectTitle}>{projects[tile].title}</h3>
+
+      <ProjectImage className={projectImage} tile={tile} />
+      {/*<div className={styles.descriptionDiv}>
+       <h3 className={projectTitle}>{projects[tile].title}</h3> 
+        <p className={projectText}>{projects[tile].description}</p>
+      </div>*/}
+      <div className={styles.iconDiv}>
+        {icons[tile].map((icon, index) => (
+          <img
+            className={iconClass}
+            src={icons[tile][index]}
+            key={`icon-${index}`}
+            alt={`icon-${index}`}
+          ></img>
+        ))}
+      </div>
       <div className={buttonDiv}>
         <button>Github</button>
         <button>Website</button>

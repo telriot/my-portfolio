@@ -50,3 +50,7 @@
   background-color: $color-red;
   animation-play-state: paused;
 }
+.tabSelected {
+  background-color: $color-white !important;
+  animation-play-state: paused;
+}

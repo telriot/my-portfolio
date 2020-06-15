@@ -1,4 +1,5 @@
 import React, { useReducer, createContext } from "react"
+import { isBrowser, isMobile } from "react-device-detect"
 import { TYPES } from "./types"
 const initialState = {
   activeProject: 0,
@@ -32,9 +33,13 @@ const AppContextProvider = (props) => {
       }
     },
     handleMouseEnter: (bar) => () => {
+      if (isMobile) return
+
       dispatch({ type: "SET_HOVER", hover: bar })
     },
     handleMouseLeave: () => {
+      if (isMobile) return
+
       dispatch({ type: "SET_HOVER", hover: 0 })
     },
   }

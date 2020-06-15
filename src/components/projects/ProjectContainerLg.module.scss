@@ -5,12 +5,11 @@
 .projectContainer {
   grid-column: 2/-1;
   grid-row: 1/-1;
-  padding: 8vw 12vw;
+  padding: 2.5rem 8vw;
   transition: transform $speed-2, opacity $speed-2 $speed-2;
-
-  @include respond("lg") {
-    padding: 4vw 6vw;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .isVisible {
@@ -38,21 +37,54 @@
 }
 
 .projectImage {
-  margin-bottom: 5vw;
+  margin-bottom: 5rem;
   transition: all $speed-2;
+  align-self: center;
   width: 100%;
+  max-width: 60rem;
+  border-radius: 0.8rem;
+  border: 1.5rem solid $color-black;
+  box-shadow: 1.5rem 1.5rem 2.5rem rgba($color-black, 0.8);
+  @include respond("lg") {
+    margin-bottom: 4rem;
+  }
+}
+.titleDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .projectTitle {
-  font-size: 4rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 5.2rem;
+  font-weight: 200;
   text-align: center;
-  margin-bottom: 3vw;
   color: $color-black;
   z-index: 10;
-  @include respond("md") {
-    font-size: 4.6rem;
+  /* @include respond("md") {
+    font-size: 6rem;
+  }*/
+}
+
+.iconDiv {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  /*@include respond("lg") {
+    padding: 4rem;
+  }*/
+}
+.icon {
+  height: 40px;
+  padding: 0 1rem;
+  filter: grayscale(95%) brightness(70%);
+  transition: filter $speed-2;
+  &:hover {
+    filter: grayscale(0%);
   }
+  /*@include respond("lg") {
+    height: 60px;
+  }*/
 }
 .projectText {
   color: $color-black;
@@ -64,25 +96,22 @@
 }
 .buttonDiv {
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   display: flex;
-
-  font-size: 2.3rem;
+  font-size: 2.4rem;
   z-index: 10;
 
   button {
     background: $color-black;
-    padding: 0.8vh 6vw;
-    font-weight: 700;
-    text-transform: uppercase;
+    border-radius: 0.4rem;
+    padding: 0.8vh 5rem;
+    font-weight: 300;
     color: $color-white;
     border: 0px solid black;
     outline: none;
     transition: all $speed-1;
+    box-shadow: 0.5rem 0.5rem 1.5rem rgba($color-black, 0.5);
 
-    @include respond("lg") {
-      padding: 0.8vh 4.5vw;
-    }
     &:hover {
       background: $color-red;
       color: $color-white;

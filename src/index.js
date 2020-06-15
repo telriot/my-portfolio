@@ -5,6 +5,9 @@ import * as serviceWorker from "./serviceWorker"
 import WindowSizeContextProvider from "./contexts/windowSizeContext"
 import AppContextProvider from "./contexts/appContext"
 import "./styles/global.scss"
+require("typeface-muli")
+require("typeface-roboto-mono")
+
 ReactDOM.render(
   <React.StrictMode>
     <AppContextProvider>
