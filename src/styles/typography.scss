@@ -1,0 +1,55 @@
+//TYPOGRAPHY
+@mixin header {
+}
+@mixin title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  @include respond("tn") {
+    font-size: 4rem;
+  }
+  @include respond("sm") {
+    font-size: 5.2rem;
+  }
+}
+@mixin text {
+  font-weight: 300;
+  font-size: 1.4rem;
+  @include respond("tn") {
+    font-size: 1.6rem;
+  }
+  @include respond("xs") {
+    font-size: 2rem;
+  }
+  @include respond("sm") {
+    font-size: 2rem;
+  }
+  @include respond("md") {
+    font-size: 2rem;
+  }
+  @include respond("lg") {
+    font-size: 2.4rem;
+  }
+}
+
+@mixin text-caps {
+  font-weight: 300;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+
+  @include respond("tn") {
+    font-size: 1.9rem;
+  }
+  @include respond("xs") {
+    font-size: 2.4rem;
+  }
+}
+@mixin header-caps {
+  font-size: 6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@mixin header-2-caps {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}

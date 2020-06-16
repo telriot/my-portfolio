@@ -68,7 +68,7 @@ function Navbar() {
           onMouseEnter={handleMouseEnter(1)}
           onClick={handleClick(1)}
         >
-          Book Club
+          <a href="#/">Book Club</a>
         </li>
 
         <li
@@ -77,7 +77,7 @@ function Navbar() {
           onMouseEnter={handleMouseEnter(2)}
           onClick={handleClick(2)}
         >
-          Kogetaro
+          <a href="#/"> Kogetaro</a>
         </li>
         <li
           className={listItem3}
@@ -85,7 +85,7 @@ function Navbar() {
           onMouseEnter={handleMouseEnter(3)}
           onClick={handleClick(3)}
         >
-          Charts
+          <a href="#/"> Charts</a>
         </li>
         <li
           className={listItem4}
@@ -93,7 +93,7 @@ function Navbar() {
           onMouseEnter={handleMouseEnter(4)}
           onClick={handleClick(4)}
         >
-          Something
+          <a href="#/"> Something</a>
         </li>
       </ul>
     </nav>

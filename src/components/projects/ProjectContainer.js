@@ -3,9 +3,9 @@ import { AppContext } from "../../contexts/appContext"
 import ProjectImage from "./links/ProjectImage"
 import styles from "./ProjectContainer.module.scss"
 import classNames from "classnames/bind"
-import { projects } from "../../assets/text/Projects"
+import { projects } from "../../assets/text/projects"
 import { icons } from "../../assets/icons/index"
-import { isBrowser, isMobile } from "react-device-detect"
+import { isMobile } from "react-device-detect"
 
 let cx = classNames.bind(styles)
 
@@ -87,8 +87,12 @@ function ProjectContainer(props) {
         ))}
       </div>
       <div className={buttonDiv}>
-        <button>Github</button>
-        <button>Website</button>
+        <a className={styles.button} href={projects[tile].git} target="_blank">
+          Github
+        </a>
+        <a className={styles.button} href={projects[tile].web} target="_blank">
+          Website
+        </a>
       </div>
     </div>
   )

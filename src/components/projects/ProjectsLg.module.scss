@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 @import "../../styles/animations.scss";
+@import "../../styles/typography.scss";
 .container {
   @include container;
   position: relative;
@@ -38,7 +39,11 @@
   text-transform: uppercase;
   text-align: center;
   transition: all $speed-2;
+  cursor: pointer;
   &:hover {
+    color: $color-red-hover;
+  }
+  &:focus {
     color: $color-red;
   }
 }
@@ -50,18 +55,17 @@
   justify-content: center;
 }
 .listItem {
-  font-size: 4rem;
-  font-weight: 700;
+  @include header-2-caps;
   color: $color-independence;
   text-transform: uppercase;
   text-align: center;
   margin: 0;
   padding: 0;
-  transition: all $speed-2;
+  transition: all $speed-1;
   cursor: pointer;
 }
 .listItemHover {
-  color: $color-red;
+  color: $color-white;
 }
 .mainText {
   grid-column: 2/3;
@@ -78,9 +82,7 @@
 
   z-index: 10;
   p {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
+    @include text-caps;
     text-align: center;
     color: $color-white;
   }
@@ -88,7 +90,9 @@
 .textWhite {
   color: $color-white;
 }
-
+.textRed {
+  color: $color-red;
+}
 .isVisible {
   visibility: visible;
   opacity: 1;

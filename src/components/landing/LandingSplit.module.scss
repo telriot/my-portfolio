@@ -6,10 +6,11 @@
   background-color: $color-white;
   min-height: 100vh;
 }
+
 .header {
   display: grid;
   grid-template-columns: [left-header-start]1fr[left-header-end right-header-start] 1fr[right-header-end];
-  grid-template-rows: [top-start]30vh[top-end main-start] max-content[main-end center-start]max-content[center-end mainTwo-start] 1fr [mainTwo-end bottom-start]3vh[bottom-end];
+  grid-template-rows: [top-start]29vh[top-end main-start] max-content[main-end center-start]max-content[center-end mainTwo-start] 1fr [mainTwo-end bottom-start]3vh[bottom-end];
   color: $color-black;
   align-items: flex-end;
   transition: all $speed-2;
@@ -60,6 +61,7 @@
   background-color: $color-white;
   transition: all $speed-2;
 }
+
 //Center
 .headerCenter {
   grid-row: center-start/center-end;
@@ -99,7 +101,7 @@
   grid-row: mainTwo-start/mainTwo-end;
   align-self: flex-end;
   justify-self: flex-end;
-  margin-right: 5vw;
+  margin-right: 2vw;
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 700;
@@ -108,6 +110,14 @@
   transform: rotate(90deg);
   transition: all $speed-2;
   z-index: 10;
+
+  a {
+    &:focus {
+      font-size: 1rem;
+      color: inherit;
+      outline: none;
+    }
+  }
 }
 .moreFall {
   -webkit-animation: bounce-top 1s both;

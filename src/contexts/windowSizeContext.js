@@ -1,9 +1,11 @@
 import React, { createContext, useState, useEffect } from "react"
+import { useScrollPosition } from "../hooks/useScrollPosition"
 
 export const WindowSizeContext = createContext()
 
 const WindowSizeContextProvider = (props) => {
   //media queries
+  const [position, setPosition] = useState({ prevPos: 0, currPos: 0 })
   const [dimensions, setDimensions] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
     height: typeof window !== "undefined" ? window.innerHeight : 0,
@@ -28,6 +30,10 @@ const WindowSizeContextProvider = (props) => {
     }
   }, [])
 
+  useScrollPosition(({ prevPos, currPos }) => {
+    setPosition({ prevPos, currPos })
+  })
+
   return (
     <WindowSizeContext.Provider
       value={{
@@ -37,6 +43,7 @@ const WindowSizeContextProvider = (props) => {
         isMD,
         isSM,
         isXS,
+        position,
       }}
     >
       {props.children}

@@ -6,7 +6,7 @@ let cx = classNames.bind(styles)
 
 function AnimatedBars() {
   const { state, projectHandlers } = useContext(AppContext)
-  const { hover } = state
+  const { hover, activeProject } = state
   const { handleClick, handleMouseEnter, handleMouseLeave } = projectHandlers
   let barClass = (num) =>
     cx({
@@ -15,6 +15,7 @@ function AnimatedBars() {
       bar3: num === 3,
       bar4: num === 4,
       tabHover: hover === num,
+      activeTab: activeProject === num,
     })
 
   return (

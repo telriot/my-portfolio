@@ -26,3 +26,34 @@ $breakpoints: (
   z-index: 1;
   display: grid;
 }
+@mixin button {
+  background: $color-black;
+  border-radius: 0.4rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.9rem;
+  font-weight: 300;
+  color: $color-white;
+  border: 0px solid black;
+  outline: none;
+  transition: all $speed-1;
+  box-shadow: 0.4rem 0.4rem 0.75rem rgba($color-black, 0.5);
+  cursor: pointer;
+
+  &:hover {
+    background: $color-red-hover;
+    color: $color-white;
+  }
+  &:focus {
+    background: $color-red;
+    color: $color-white;
+  }
+
+  @media (min-width: 36em) {
+    font-size: 2.1rem;
+  }
+  @media (min-width: 62em) {
+    padding: 1rem 5rem;
+    font-size: 2.4rem;
+    box-shadow: 0.5rem 0.5rem 1.5rem rgba($color-black, 0.5);
+  }
+}

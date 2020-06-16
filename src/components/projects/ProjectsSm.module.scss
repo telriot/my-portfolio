@@ -1,5 +1,7 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
+@import "../../styles/typography.scss";
+
 .container {
   @include container;
   grid-template-columns: [lg-start]5vw[lg-end main-start] 1fr[main-end rg-start] 5vw[rg-end];
@@ -21,30 +23,14 @@
   transition: opacity 0.3s;
 }
 .mainText {
+  @include text-caps;
   grid-column: lg-start/main-end;
   grid-row: main-start/half;
   padding: 20vh 10vh 0vh 5vh;
   color: $color-white;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
   background-color: $color-black;
   transition: opacity 0.3s 0.15s;
   z-index: 10;
-  @include respond("tn") {
-    font-size: 1.9rem;
-  }
-  @include respond("xs") {
-    margin-bottom: 7rem;
-    font-size: 2.4rem;
-  }
-  @include respond("sm") {
-    font-size: 3.2rem;
-  }
-  @include respond("lg") {
-    font-size: 6rem;
-    line-height: 8.5rem;
-  }
 }
 .backGround {
   width: 100%;

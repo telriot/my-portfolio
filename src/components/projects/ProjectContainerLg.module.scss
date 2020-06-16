@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 @import "../../styles/animations.scss";
+@import "../../styles/typography.scss";
 
 .projectContainer {
   grid-column: 2/-1;
@@ -56,8 +57,7 @@
   justify-content: center;
 }
 .projectTitle {
-  font-size: 5.2rem;
-  font-weight: 200;
+  @include title;
   text-align: center;
   color: $color-black;
   z-index: 10;
@@ -87,10 +87,8 @@
   }
 }
 .projectText {
+  @include text;
   color: $color-black;
-  font-size: 2.1rem;
-  font-weight: 400;
-
   margin-bottom: 4rem;
   z-index: 9;
 }
@@ -98,23 +96,9 @@
   align-items: center;
   justify-content: space-evenly;
   display: flex;
-  font-size: 2.4rem;
+
   z-index: 10;
-
-  button {
-    background: $color-black;
-    border-radius: 0.4rem;
-    padding: 0.8vh 5rem;
-    font-weight: 300;
-    color: $color-white;
-    border: 0px solid black;
-    outline: none;
-    transition: all $speed-1;
-    box-shadow: 0.5rem 0.5rem 1.5rem rgba($color-black, 0.5);
-
-    &:hover {
-      background: $color-red;
-      color: $color-white;
-    }
-  }
+}
+.button {
+  @include button;
 }

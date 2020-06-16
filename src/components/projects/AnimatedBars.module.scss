@@ -10,8 +10,9 @@
   justify-self: center;
   border-radius: 50rem;
   transform: translateY(-2.5em);
+  cursor: pointer;
   &:hover {
-    background-color: $color-red;
+    background-color: $color-red-hover;
   }
 }
 
@@ -41,6 +42,10 @@
   opacity: 0;
 }
 .tabHover {
+  background-color: $color-red-hover;
+  animation-play-state: paused;
+}
+.activeTab {
   background-color: $color-red;
   animation-play-state: paused;
 }

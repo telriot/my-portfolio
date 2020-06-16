@@ -31,13 +31,6 @@
     font-size: 1.9rem;
     width: 95%;
   }
-  @include respond("sm") {
-    font-size: 6rem;
-  }
-  @include respond("lg") {
-    font-size: 7rem;
-    line-height: 8.5rem;
-  }
 }
 .listItem {
   color: $color-independence;

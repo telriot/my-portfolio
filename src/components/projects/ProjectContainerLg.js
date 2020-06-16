@@ -5,7 +5,7 @@ import ProjectImage from "./links/ProjectImage"
 import { AppContext } from "../../contexts/appContext"
 import { icons } from "../../assets/icons/index"
 
-import { projects } from "../../assets/text/Projects"
+import { projects } from "../../assets/text/projects"
 
 let cx = classNames.bind(styles)
 
@@ -31,7 +31,7 @@ function ProjectContainerLg(props) {
   })
   return (
     <div className={projectContainer}>
-      <div classname={styles.titleDiv}>
+      <div className={styles.titleDiv}>
         <>
           <h3 className={projectTitle}>{projects[tile].title}</h3>
           <div className={styles.iconDiv}>
@@ -50,8 +50,12 @@ function ProjectContainerLg(props) {
       <ProjectImage tile={tile} className={projectImage} />
 
       <div className={buttonDiv}>
-        <button>Github</button>
-        <button>Website</button>
+        <a className={styles.button} href={projects[tile].git} target="_blank">
+          Github
+        </a>
+        <a className={styles.button} href={projects[tile].web} target="_blank">
+          Website
+        </a>
       </div>
     </div>
   )

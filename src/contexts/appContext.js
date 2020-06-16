@@ -1,10 +1,13 @@
 import React, { useReducer, createContext } from "react"
 import { isBrowser, isMobile } from "react-device-detect"
+import { scroller, animateScroll as scroll } from "react-scroll"
+
 import { TYPES } from "./types"
 const initialState = {
   activeProject: 0,
   hover: 0,
 }
+
 export const AppContext = createContext()
 
 const AppContextProvider = (props) => {
@@ -41,6 +44,13 @@ const AppContextProvider = (props) => {
       if (isMobile) return
 
       dispatch({ type: "SET_HOVER", hover: 0 })
+    },
+    handleFocus: (target) => () => {
+      scroller.scrollTo(target, {
+        duration: 500,
+        delay: 100,
+        smooth: true,
+      })
     },
   }
 

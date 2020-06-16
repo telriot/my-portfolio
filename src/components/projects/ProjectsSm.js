@@ -27,7 +27,7 @@ function Projects() {
   })
 
   return (
-    <section className={container}>
+    <section id="projects" className={container}>
       <Navbar
         activeProject={activeProject}
         hover={hover}

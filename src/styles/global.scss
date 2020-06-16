@@ -48,11 +48,6 @@ ol {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-}
-
 /* Natural flow and rhythm in articles by default */
 article > * + * {
   margin-top: 1em;
@@ -93,4 +88,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
+}
+a {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  text-decoration: inherit;
+  transition: inherit;
+  cursor: pointer;
+  &:focus {
+    color: $color-red;
+    outline: none;
+  }
 }

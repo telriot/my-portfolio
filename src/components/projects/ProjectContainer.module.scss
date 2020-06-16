@@ -1,5 +1,7 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
+@import "../../styles/typography.scss";
+
 .projectContainer {
   grid-column: main-start/main-end;
   grid-row: main-start/main-end;
@@ -26,30 +28,18 @@
   padding: 0 2rem;
 }
 .projectTitle {
-  font-size: 3.5rem;
+  @include title;
   align-self: center;
   text-align: center;
-  font-weight: 300;
   margin-bottom: 2rem;
   transition: padding $speed-1;
   z-index: 10;
-  @include respond("tn") {
-    font-size: 4rem;
-  }
 }
 .projectText {
+  @include text;
   color: $color-black;
-  font-size: 1.4rem;
-  font-weight: 400;
   z-index: 10;
   text-align: center;
-
-  @include respond("tn") {
-    font-size: 1.5rem;
-  }
-  @include respond("xs") {
-    font-size: 2.1rem;
-  }
 }
 
 .iconDiv {
@@ -83,52 +73,9 @@
     margin-bottom: 7rem;
     font-size: 2.6rem;
   }
-  button {
-    background: $color-black;
-    border-radius: 4px;
-    padding: 1rem 2.5rem;
-    font-size: 1.9rem;
-    font-weight: 400;
-    color: $color-white;
-    border: 0px solid black;
-    outline: none;
-    transition: all $speed-1;
-    box-shadow: 0.4rem 0.4rem 0.75rem rgba($color-black, 0.5);
-    &:hover {
-      background: $color-red;
-    }
-    @include respond("tn") {
-      font-size: 2.1rem;
-    }
-    @include respond("xs") {
-      margin-bottom: 7rem;
-      font-size: 2.4rem;
-    }
-  }
 }
-
-.buttonBlack {
-  @extend .buttonDiv;
-
-  button {
-    background: $color-white;
-    color: $color-black;
-    box-shadow: 0.4rem 0.4rem 0.75rem rgba(black, 0.5);
-
-    &:hover {
-      background: $color-red;
-      color: $color-white;
-    }
-  }
-}
-.buttonWhite {
-  @extend .buttonBlack;
-
-  button {
-    &:hover {
-      color: $color-white;
-    }
-  }
+.button {
+  @include button;
 }
 .isVisible {
   opacity: 1;

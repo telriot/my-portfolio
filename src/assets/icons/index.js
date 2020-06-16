@@ -11,5 +11,5 @@ export const icons = {
   1: [react, html, css, sass, mongo, node],
   2: [react, js, html, css, sass],
   3: [react, d3, html, css, sass],
-  4: [react],
+  4: [react, js, html, css, node],
 }
