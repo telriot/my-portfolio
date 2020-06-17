@@ -4,8 +4,11 @@
 
 .container {
   @include container;
+  background-color: $color-white;
+  min-height: 85vh;
+  z-index: 0;
   grid-template-columns: 2.5rem[main-start] 1fr[main-end ] 2.5rem;
-  grid-template-rows: [header-start]25vh [header-end main-start] 1fr[main-end bottom-start] 12vh[bottom-end];
+  grid-template-rows: [header-start]25vh [header-end main-start] 1fr[main-end stack-start]max-content[stack-end bottom-start] 12vh[bottom-end];
   @include respond("tn") {
     grid-template-columns: 6vw[main-start] 1fr[main-end ] 6vw;
   }
@@ -18,8 +21,6 @@
   @include respond("md") {
     grid-template-columns: 20vw[main-start] 1fr[main-end ] 20vw;
   }
-  background-color: $color-white;
-  min-height: 85vh;
 }
 .header {
   @include title;
@@ -34,4 +35,28 @@
   @include text;
   grid-column: main-start/main-end;
   grid-row: main-start/main-end;
+}
+.iconDiv {
+  grid-row: stack-start/stack-end;
+  grid-column: main-start/main-end;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+  /*@include respond("lg") {
+    padding: 4rem;
+  }*/
+}
+.icon {
+  height: 40px;
+  padding: 0rem;
+  margin: 1rem;
+  filter: grayscale(95%) brightness(70%);
+  transition: filter $speed-2;
+  &:hover {
+    filter: grayscale(0%);
+  }
+  @include respond("lg") {
+    height: 50px;
+  }
 }

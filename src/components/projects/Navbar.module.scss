@@ -8,6 +8,7 @@
   justify-content: center;
   position: relative;
   overflow: visible;
+  z-index: 10;
   @include respond("sm") {
     height: 12em;
   }

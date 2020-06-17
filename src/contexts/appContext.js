@@ -13,6 +13,10 @@ export const AppContext = createContext()
 const AppContextProvider = (props) => {
   const appReducer = (state, action) => {
     switch (action.type) {
+      case TYPES.RESET:
+        return {
+          ...initialState,
+        }
       case TYPES.SET_ACTIVE_PROJECT:
         return {
           ...state,

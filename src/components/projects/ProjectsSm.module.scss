@@ -9,6 +9,7 @@
   min-height: 100vh;
   background-color: $color-white;
   transition: background-color $speed-2;
+  z-index: 0;
 }
 .barContainer {
   grid-column: main-start/main-end;

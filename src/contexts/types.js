@@ -1,4 +1,5 @@
 export const TYPES = {
+  RESET: "RESET",
   SET_ACTIVE_PROJECT: "SET_ACTIVE_PROJECT",
   SET_HOVER: "SET_HOVER",
 }

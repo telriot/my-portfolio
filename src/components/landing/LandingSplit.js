@@ -5,7 +5,7 @@ import { Element } from "react-scroll"
 
 import { useScrollPosition } from "../../hooks/useScrollPosition"
 import classNames from "classnames/bind"
-import MainNav from "../about/layout/MainNav"
+import MainNav from "../layout/MainNav"
 import { WindowSizeContext } from "../../contexts/windowSizeContext"
 let cx = classNames.bind(styles)
 
@@ -121,7 +121,7 @@ function Landing() {
   return (
     <Element name="landing">
       <section id="landing" ref={sectionRef} className={styles.container}>
-        {!navHide ? <MainNav /> : null}
+        {!navHide ? <MainNav origin="landing" /> : null}
         <header onClick={toggleClasses} className={header}>
           <div className={bgLeft}></div>
           <div className={bgRight}></div>

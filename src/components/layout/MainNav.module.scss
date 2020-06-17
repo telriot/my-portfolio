@@ -1,0 +1,153 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/animations.scss";
+.navbar {
+  position: fixed;
+
+  top: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  background: transparent;
+  z-index: 10000;
+  overflow: visible;
+  width: max-content;
+  height: max-content;
+  padding: 0;
+  overflow: visible;
+  z-index: 100;
+  @include respond("xs") {
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+.navbarXSShifted {
+  @extend .navbar;
+  position: fixed;
+  top: 6.5rem;
+  right: 0;
+  padding: 0;
+  width: max-content;
+  height: max-content;
+}
+.navRight {
+  justify-content: flex-end;
+}
+.navList {
+  display: flex;
+  z-index: 100;
+  overflow: visible;
+
+  li {
+    padding: 0.7rem 1rem;
+    &:hover {
+      .rect {
+        background-color: $color-red-hover;
+      }
+      .text {
+        transform: translateX(-100%) rotate(270deg) scaleX(1);
+        opacity: 1;
+      }
+      .textAlt {
+        transform: translateX(0) rotate(90deg) scaleX(1);
+        transform-origin: left;
+        opacity: 1;
+        overflow: visible;
+        z-index: 100;
+      }
+    }
+  }
+}
+
+.navListXS {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 6rem;
+
+  li {
+    padding: 0.7rem 1rem;
+    .textAlt {
+      left: -1rem;
+      overflow: visible;
+      z-index: 100;
+    }
+    &:hover {
+      .rect {
+        background-color: $color-red-hover;
+      }
+      .text {
+        transform: scaleX(1);
+        opacity: 1;
+        overflow: visible;
+        z-index: 100;
+      }
+      .textAlt {
+        transform: translateX(-100%) scaleX(1);
+        background-color: rgba($color-white, 0.8);
+        transform-origin: left;
+        opacity: 1;
+        overflow: visible;
+        z-index: 100;
+      }
+    }
+  }
+}
+.rect {
+  position: relative;
+  background: $color-black;
+  height: 2rem;
+  width: 1rem;
+  border-radius: 2px;
+  overflow: visible;
+
+  cursor: pointer;
+  @include respond(xs) {
+    height: 2rem;
+    width: 2rem;
+  }
+  @include respond(sm) {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+}
+.backgroundRed {
+  background: $color-red;
+}
+
+.text {
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  left: 2rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  opacity: 0;
+  color: $color-black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.3s;
+  background-color: rgba($color-white, 0.8);
+  border-radius: 2px;
+  padding: 0.3rem 0.6rem;
+  white-space: nowrap;
+  overflow: visible;
+  z-index: 100;
+  @include respond("xs") {
+    transform: translateX(-100%) rotate(270deg) scaleX(0);
+    transform-origin: right;
+    border-radius: none;
+    top: 2.5rem;
+    left: +47%;
+  }
+}
+
+.textAlt {
+  color: $color-red-hover;
+  transform-origin: left;
+  background-color: transparent;
+
+  transform: translateX(0%) rotate(90deg) scaleX(0);
+}

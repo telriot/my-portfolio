@@ -6,7 +6,7 @@ import AnimatedBars from "./AnimatedBars"
 import ProjectContainerLg from "./ProjectContainerLg"
 import styles from "./Projects.module.scss"
 import classNames from "classnames/bind"
-import MainNav from "../about/layout/MainNav"
+import MainNav from "../layout/MainNav"
 
 let cx = classNames.bind(styles)
 
@@ -27,8 +27,8 @@ function Projects() {
 
   useEffect(() => {
     const { y, height } = sectionRef.current.getBoundingClientRect()
-    if (y < 0 && -y < height - 50 && navHide) setNavHide(false)
-    if ((y > 0 || -y > height - 50) && !navHide) setNavHide(true)
+    if (y < 50 && -y < height - 50 && navHide) setNavHide(false)
+    if ((y > 50 || -y > height - 50) && !navHide) setNavHide(true)
   }, [position.currPos])
 
   let header = cx({
@@ -50,9 +50,8 @@ function Projects() {
 
   return (
     <Element name="projects">
+      {!navHide && <MainNav position="right" origin="projects" />}
       <section id="projects" ref={sectionRef} className={styles.container}>
-        {!navHide && <MainNav position="right" />}
-
         <div className={barContainer}>
           <AnimatedBars
             activeProject={activeProject}

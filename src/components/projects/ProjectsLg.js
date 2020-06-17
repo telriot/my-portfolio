@@ -5,7 +5,7 @@ import AnimatedRects from "./AnimatedRects"
 import ProjectContainerLg from "./ProjectContainerLg"
 import styles from "./ProjectsLg.module.scss"
 import classNames from "classnames/bind"
-import MainNav from "../about/layout/MainNav"
+import MainNav from "../layout/MainNav"
 import { WindowSizeContext } from "../../contexts/windowSizeContext"
 let cx = classNames.bind(styles)
 
@@ -24,8 +24,8 @@ function ProjectsXl() {
 
   useEffect(() => {
     const { y, height } = sectionRef.current.getBoundingClientRect()
-    if (y < 0 && -y < height - 50 && navHide) setNavHide(false)
-    if ((y > 0 || -y > height - 50) && !navHide) setNavHide(true)
+    if (y < 50 && -y < height - 50 && navHide) setNavHide(false)
+    if ((y > 50 || -y > height - 50) && !navHide) setNavHide(true)
   }, [position.currPos])
   let header = cx({
     header: true,
@@ -44,8 +44,8 @@ function ProjectsXl() {
 
   return (
     <Element name="projects">
+      {!navHide && <MainNav position="right" origin="projects" />}
       <section id="projects" ref={sectionRef} className={styles.container}>
-        {!navHide && <MainNav position="right" />}
         <div className={styles.sidebar}>
           <h2 className={header} onClick={handleClick(0)}>
             <a onFocus={handleFocus("projects")} href="#/">
