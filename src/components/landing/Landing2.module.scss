@@ -15,21 +15,25 @@
   align-items: flex-end;
   transition: all $speed-2;
 
+  h1,
   p {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 2.7rem;
+    font-size: 2.2rem;
     @include respond("tn") {
-      font-size: 3rem;
+      font-size: 2.6rem;
     }
     @include respond("xs") {
-      font-size: 4rem;
+      font-size: 3.6rem;
     }
     @include respond("sm") {
       font-size: 4.5rem;
     }
     @include respond("lg") {
-      font-size: 6rem;
+      font-size: 5.5rem;
+    }
+    @include respond("xl") {
+      font-size: 6.5rem;
     }
   }
 }
@@ -110,8 +114,12 @@
 .headerLeftBottom,
 .headerRightBottom {
   @extend .sideHeader;
+  color: $color-red;
   grid-row: mainTwo-start/mainTwo-end;
   align-self: flex-start;
+  span {
+    color: $color-black;
+  }
 }
 
 .headerRightBottom {

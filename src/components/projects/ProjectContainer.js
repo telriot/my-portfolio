@@ -72,10 +72,7 @@ function ProjectContainer(props) {
       <h3 className={projectTitle}>{projects[tile].title}</h3>
 
       <ProjectImage className={projectImage} tile={tile} />
-      {/*<div className={styles.descriptionDiv}>
-       <h3 className={projectTitle}>{projects[tile].title}</h3> 
-        <p className={projectText}>{projects[tile].description}</p>
-      </div>*/}
+
       <div className={styles.iconDiv}>
         {icons[tile].map((icon, index) => (
           <img
@@ -87,10 +84,20 @@ function ProjectContainer(props) {
         ))}
       </div>
       <div className={buttonDiv}>
-        <a className={styles.button} href={projects[tile].git} target="_blank">
+        <a
+          className={styles.button}
+          href={projects[tile].git}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           Github
         </a>
-        <a className={styles.button} href={projects[tile].web} target="_blank">
+        <a
+          className={styles.button}
+          href={projects[tile].web}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           Website
         </a>
       </div>

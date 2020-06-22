@@ -3,14 +3,14 @@
 .navbar {
   grid-column: main-start/main-end;
   grid-row: 1/2;
-  height: 9em;
+  height: 8em;
   display: flex;
   justify-content: center;
   position: relative;
   overflow: visible;
   z-index: 10;
   @include respond("sm") {
-    height: 12em;
+    height: 10em;
   }
 }
 .navList {

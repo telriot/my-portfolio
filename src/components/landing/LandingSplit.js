@@ -1,12 +1,11 @@
 import React, { useState, useContext, useRef, useEffect } from "react"
 import styles from "./LandingSplit.module.scss"
 import { AppContext } from "../../contexts/appContext"
+import { WindowSizeContext } from "../../contexts/windowSizeContext"
 import { Element } from "react-scroll"
-
-import { useScrollPosition } from "../../hooks/useScrollPosition"
 import classNames from "classnames/bind"
 import MainNav from "../layout/MainNav"
-import { WindowSizeContext } from "../../contexts/windowSizeContext"
+
 let cx = classNames.bind(styles)
 
 function Landing() {

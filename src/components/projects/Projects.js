@@ -7,6 +7,7 @@ import ProjectContainerLg from "./ProjectContainerLg"
 import styles from "./Projects.module.scss"
 import classNames from "classnames/bind"
 import MainNav from "../layout/MainNav"
+import { projects } from "../../assets/text/projects"
 
 let cx = classNames.bind(styles)
 
@@ -75,7 +76,7 @@ function Projects() {
           onClick={handleClick(1)}
           className={projectClass(1)}
         >
-          <a href="#/"> Book Club</a>
+          <a href="#/"> {projects[1].display}</a>
         </div>
         <div
           onMouseEnter={handleMouseEnter(2)}
@@ -83,7 +84,7 @@ function Projects() {
           onClick={handleClick(2)}
           className={projectClass(2)}
         >
-          <a href="#/"> Kogetaro</a>
+          <a href="#/"> {projects[2].display}</a>
         </div>
         <div
           onMouseEnter={handleMouseEnter(3)}
@@ -91,7 +92,7 @@ function Projects() {
           onClick={handleClick(3)}
           className={projectClass(3)}
         >
-          <a href="#/"> Charts</a>
+          <a href="#/"> {projects[3].display}</a>
         </div>
         <div
           onMouseEnter={handleMouseEnter(4)}
@@ -99,7 +100,7 @@ function Projects() {
           onClick={handleClick(4)}
           className={projectClass(4)}
         >
-          <a href="#/"> Something</a>
+          <a href="#/"> {projects[4].display}</a>
         </div>
         <ProjectContainerLg tile={1} activeProject={activeProject} />
         <ProjectContainerLg tile={2} activeProject={activeProject} />

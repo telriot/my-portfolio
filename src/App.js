@@ -11,8 +11,8 @@ import { WindowSizeContext } from "./contexts/windowSizeContext"
 import { AppContext } from "./contexts/appContext"
 
 function App() {
-  const { isXS, isSM, isLG } = useContext(WindowSizeContext)
-  const { state, dispatch } = useContext(AppContext)
+  const { isXS, isLG } = useContext(WindowSizeContext)
+  const { dispatch } = useContext(AppContext)
   useEffect(() => {
     dispatch({ type: "RESET" })
   }, [])

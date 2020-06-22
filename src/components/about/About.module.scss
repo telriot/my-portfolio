@@ -7,16 +7,20 @@
   background-color: $color-white;
   min-height: 85vh;
   z-index: 0;
+  gap: 1.5rem;
   grid-template-columns: 2.5rem[main-start] 1fr[main-end ] 2.5rem;
-  grid-template-rows: [header-start]25vh [header-end main-start] 1fr[main-end stack-start]max-content[stack-end bottom-start] 12vh[bottom-end];
+  grid-template-rows: [header-start]12vh [header-end main-start] 1fr[main-end stack-start]max-content[stack-end bottom-start] 2vh[bottom-end];
   @include respond("tn") {
     grid-template-columns: 6vw[main-start] 1fr[main-end ] 6vw;
+    grid-template-rows: [header-start]15vh [header-end main-start] 1fr[main-end stack-start]max-content[stack-end bottom-start] 2vh[bottom-end];
   }
   @include respond("xs") {
     grid-template-columns: 8vw[main-start] 1fr[main-end ] 8vw;
+    grid-template-rows: [header-start]20vh [header-end main-start] 1fr[main-end stack-start]max-content[stack-end bottom-start] 8vh[bottom-end];
   }
   @include respond("sm") {
     grid-template-columns: 12vw[main-start] 1fr[main-end ] 12vw;
+    grid-template-rows: [header-start]25vh [header-end main-start] 1fr[main-end stack-start]max-content[stack-end bottom-start] 12vh[bottom-end];
   }
   @include respond("md") {
     grid-template-columns: 20vw[main-start] 1fr[main-end ] 20vw;

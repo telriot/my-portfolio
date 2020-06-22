@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { AppContext } from "../../contexts/appContext"
 import classNames from "classnames/bind"
 import styles from "./Navbar.module.scss"
+import { projects } from "../../assets/text/projects"
 
 let cx = classNames.bind(styles)
 
@@ -58,43 +59,24 @@ function Navbar() {
     listItemHovered: activeProject % 2 === 1 && hover === 4,
     listItemHoveredDark: activeProject % 2 === 0 && hover === 4,
   })
+  const ListItem = ({ className, num }) => (
+    <li
+      className={className}
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter(num)}
+      onClick={handleClick(num)}
+    >
+      <a href="#/">{projects[num].display}</a>
+    </li>
+  )
 
   return (
     <nav className={navbar}>
       <ul className={navList}>
-        <li
-          className={listItem1}
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter(1)}
-          onClick={handleClick(1)}
-        >
-          <a href="#/">Book Club</a>
-        </li>
-
-        <li
-          className={listItem2}
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter(2)}
-          onClick={handleClick(2)}
-        >
-          <a href="#/"> Kogetaro</a>
-        </li>
-        <li
-          className={listItem3}
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter(3)}
-          onClick={handleClick(3)}
-        >
-          <a href="#/"> Charts</a>
-        </li>
-        <li
-          className={listItem4}
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter(4)}
-          onClick={handleClick(4)}
-        >
-          <a href="#/"> Something</a>
-        </li>
+        <ListItem className={listItem1} num={1} />
+        <ListItem className={listItem2} num={2} />
+        <ListItem className={listItem3} num={3} />
+        <ListItem className={listItem4} num={4} />
       </ul>
     </nav>
   )

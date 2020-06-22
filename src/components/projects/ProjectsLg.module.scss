@@ -89,6 +89,10 @@
     text-align: center;
     color: $color-white;
   }
+  a {
+    @include text-caps;
+    color: $color-red;
+  }
 }
 .textWhite {
   color: $color-white;

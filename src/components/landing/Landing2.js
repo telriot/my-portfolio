@@ -31,19 +31,6 @@ function Landing2() {
     if (-currPos.y < window.innerHeight && navHide) setNavHide(false)
   }, [currPos])
 
-  const toggleClasses = () => {
-    if (!isLeftOn && !isRightOn) {
-      setLeftOn((prevState) => (prevState ? false : true))
-      setRightOn(false)
-    } else if (isLeftOn && !isRightOn) {
-      setRightOn((prevState) => (prevState ? false : true))
-      setLeftOn(false)
-    } else if (isRightOn && !isLeftOn) {
-      setRightOn(false)
-      setLeftOn(false)
-      setDone(true)
-    }
-  }
   let header = cx({
     header: true,
     bgScrolled: isScrolled,
@@ -100,10 +87,16 @@ function Landing2() {
           <div className={bgLeft}></div>
           <div className={bgRight}></div>
           <p className={headerLeftTop}>Hi, I am</p>
-          <p className={centerLeft}>Ben</p>
-          <p className={centerRight}>A front-end dev</p>
-          <p className={headerRightBottom}>In Japan</p>
-          <div onFocus={handleFocus("landing")} className={more}></div>
+          <h1 className={centerLeft}>Beniamino Tartarini</h1>
+          <p className={centerRight}>A front-end developer</p>
+          <p className={headerRightBottom}>
+            <span> In Miyazaki</span> <br />
+            <span>Japan</span>
+          </p>
+          <div onFocus={handleFocus("landing")} className={more}>
+            {" "}
+            {!isDone ? "Scroll for more" : "Scroll for more"}
+          </div>
         </header>
       </section>
     </Element>
@@ -111,23 +104,3 @@ function Landing2() {
 }
 
 export default Landing2
-
-/* {isLeftOn && !isRightOn ? (
-            <>
-            
-            </>
-          ) : !isLeftOn && isRightOn ? (
-            <>
-              <p className={headerLeftTop}>Feel free to</p>
-              <p className={centerLeft}>Peek</p>
-              <p className={centerRight}>At some of my</p>
-              <p className={headerRightBottom}>recent projects</p>
-            </>
-          ) : (
-            <>
-              <p className={headerLeftTop}>Or contact me</p>
-              <p className={centerLeft}>Here</p>
-              <p className={centerRight}>Be it work,</p>
-              <p className={headerRightBottom}>or just a chat!</p>
-            </>
-          )}*/

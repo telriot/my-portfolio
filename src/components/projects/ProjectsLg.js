@@ -7,6 +7,7 @@ import styles from "./ProjectsLg.module.scss"
 import classNames from "classnames/bind"
 import MainNav from "../layout/MainNav"
 import { WindowSizeContext } from "../../contexts/windowSizeContext"
+import { projects, projectIntro } from "../../assets/text/projects"
 let cx = classNames.bind(styles)
 
 function ProjectsXl() {
@@ -66,8 +67,7 @@ function ProjectsXl() {
               className={listItem(1)}
             >
               <a onFocus={handleFocus("projects")} href="#/">
-                {" "}
-                Book club{" "}
+                {projects[1].display}
               </a>
             </li>
 
@@ -78,8 +78,7 @@ function ProjectsXl() {
               className={listItem(2)}
             >
               <a onFocus={handleFocus("projects")} href="#/">
-                {" "}
-                Kogetaro{" "}
+                {projects[2].display}
               </a>
             </li>
             <li
@@ -89,8 +88,7 @@ function ProjectsXl() {
               className={listItem(3)}
             >
               <a onFocus={handleFocus("projects")} href="#/">
-                {" "}
-                Charts{" "}
+                {projects[3].display}
               </a>
             </li>
             <li
@@ -100,19 +98,13 @@ function ProjectsXl() {
               className={listItem(4)}
             >
               <a onFocus={handleFocus("projects")} href="#/">
-                {" "}
-                Something{" "}
+                {projects[4].display}
               </a>
             </li>
           </ul>
         </div>
         <div className={mainText}>
-          <p>
-            Tempor ipsum non qui magna. Excepteur duis commodo culpa tempor et
-            laboris magna ad. Occaecat culpa eiusmod mollit ex Lorem minim et
-            tempor reprehenderit nulla occaecat amet ex do. Voluptate ut eiusmod
-            mollit labore enim.
-          </p>
+          <p>{projectIntro}</p>
         </div>
         <ProjectContainerLg tile={1} activeProject={activeProject} />
         <ProjectContainerLg tile={2} activeProject={activeProject} />

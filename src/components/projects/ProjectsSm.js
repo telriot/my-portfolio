@@ -6,6 +6,7 @@ import AnimatedBars from "./AnimatedBars"
 import MainNav from "../layout/MainNav"
 import Navbar from "./Navbar"
 import ProjectContainer from "./ProjectContainer"
+import { projectIntro } from "../../assets/text/projects"
 import styles from "./ProjectsSm.module.scss"
 import classNames from "classnames/bind"
 let cx = classNames.bind(styles)
@@ -48,10 +49,7 @@ function Projects() {
           handleClick={handleClick}
         />
 
-        <h2 className={mainText}>
-          Duis velit elit magna laboris occaecat laboris.Sit officia veniam sit
-          occaecat excepteur incididunt nisi proident sunt id.
-        </h2>
+        <h2 className={mainText}>{projectIntro}</h2>
 
         <ProjectContainer tile={1} activeProject={activeProject} />
         <ProjectContainer tile={2} activeProject={activeProject} />

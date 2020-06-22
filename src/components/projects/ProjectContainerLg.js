@@ -41,7 +41,7 @@ function ProjectContainerLg(props) {
                 src={icons[tile][index]}
                 key={`icon-${index}`}
                 alt={`icon-${index}`}
-              ></img>
+              />
             ))}
           </div>
         </>
@@ -50,10 +50,20 @@ function ProjectContainerLg(props) {
       <ProjectImage tile={tile} className={projectImage} />
 
       <div className={buttonDiv}>
-        <a className={styles.button} href={projects[tile].git} target="_blank">
+        <a
+          className={styles.button}
+          rel="noopener noreferrer"
+          href={projects[tile].git}
+          target="_blank"
+        >
           Github
         </a>
-        <a className={styles.button} href={projects[tile].web} target="_blank">
+        <a
+          className={styles.button}
+          rel="noopener noreferrer"
+          href={projects[tile].web}
+          target="_blank"
+        >
           Website
         </a>
       </div>

@@ -5,7 +5,7 @@
 .container {
   @include container;
   grid-template-columns: [lg-start]5vw[lg-end main-start] 1fr[main-end rg-start] 5vw[rg-end];
-  grid-template-rows: [top-start nav-start ]9em[top-end main-start] 1.2fr [half]0.8fr[main-end bottom-start] 5vw[bottom-end];
+  grid-template-rows: [top-start nav-start ]8em[top-end main-start] 1.2fr [half]0.8fr[main-end bottom-start] 5vw[bottom-end];
   min-height: 100vh;
   background-color: $color-white;
   transition: background-color $speed-2;
@@ -32,6 +32,9 @@
   background-color: $color-black;
   transition: opacity 0.3s 0.15s;
   z-index: 10;
+  a {
+    color: $color-red;
+  }
 }
 .backGround {
   width: 100%;
