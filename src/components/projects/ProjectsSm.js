@@ -20,8 +20,8 @@ function Projects() {
 
   useEffect(() => {
     const { y, height } = sectionRef.current.getBoundingClientRect()
-    if (y < 30 && -y < height - 120 && navHide) setNavHide(false)
-    if ((y > 30 || -y > height - 120) && !navHide) setNavHide(true)
+    if (y < 0 && -y < height && navHide) setNavHide(false)
+    if ((y > 0 || -y > height) && !navHide) setNavHide(true)
   }, [position.currPos])
 
   let container = cx({

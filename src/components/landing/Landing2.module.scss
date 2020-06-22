@@ -17,19 +17,19 @@
 
   p {
     text-transform: uppercase;
-    font-size: 3.4rem;
+    font-weight: 600;
+    font-size: 2.7rem;
     @include respond("tn") {
-      font-size: 3.8rem;
+      font-size: 3rem;
     }
     @include respond("xs") {
-      font-size: 5.2rem;
+      font-size: 4rem;
     }
     @include respond("sm") {
-      font-size: 6rem;
+      font-size: 4.5rem;
     }
     @include respond("lg") {
-      font-size: 7rem;
-      line-height: 8.5rem;
+      font-size: 6rem;
     }
   }
 }
@@ -73,10 +73,21 @@
 .headerCenterLeft,
 .headerCenterRight {
   grid-row: center-start/center-end;
+  align-self: flex-start;
   padding: 0 4vw;
   color: $color-red;
   transition: all $speed-1;
   z-index: 10;
+}
+.headerCenterLeft {
+  @include respond("lg") {
+    padding-left: 10vw;
+  }
+}
+.headerCenterRight {
+  @include respond("lg") {
+    padding-right: 10vw;
+  }
 }
 //Sides
 .sideHeader {
@@ -89,11 +100,25 @@
   @extend .sideHeader;
   grid-row: main-start/main-end;
 }
+
+.headerLeft {
+  @include respond("lg") {
+    padding-left: 10vw;
+    margin: 0;
+  }
+}
 .headerLeftBottom,
 .headerRightBottom {
   @extend .sideHeader;
   grid-row: mainTwo-start/mainTwo-end;
   align-self: flex-start;
+}
+
+.headerRightBottom {
+  @include respond("lg") {
+    padding-right: 10vw;
+    margin: 0;
+  }
 }
 //More span
 .more {

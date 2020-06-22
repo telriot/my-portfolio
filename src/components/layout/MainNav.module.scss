@@ -48,13 +48,6 @@
         transform: translateX(-100%) rotate(270deg) scaleX(1);
         opacity: 1;
       }
-      .textAlt {
-        transform: translateX(0) rotate(90deg) scaleX(1);
-        transform-origin: left;
-        opacity: 1;
-        overflow: visible;
-        z-index: 100;
-      }
     }
   }
 }
@@ -67,11 +60,7 @@
 
   li {
     padding: 0.7rem 1rem;
-    .textAlt {
-      left: -1rem;
-      overflow: visible;
-      z-index: 100;
-    }
+
     &:hover {
       .rect {
         background-color: $color-red-hover;
@@ -83,9 +72,8 @@
         z-index: 100;
       }
       .textAlt {
-        transform: translateX(-100%) scaleX(1);
+        transform: scaleX(1);
         background-color: rgba($color-white, 0.8);
-        transform-origin: left;
         opacity: 1;
         overflow: visible;
         z-index: 100;
@@ -107,8 +95,8 @@
     width: 2rem;
   }
   @include respond(sm) {
-    height: 2.4rem;
-    width: 2.4rem;
+    height: 2rem;
+    width: 2rem;
   }
 }
 .backgroundRed {
@@ -129,9 +117,9 @@
   transform: scaleX(0);
   transform-origin: left;
   transition: all 0.3s;
-  background-color: rgba($color-white, 0.8);
+  background-color: rgba($color-white, 1);
   border-radius: 2px;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.8rem;
   white-space: nowrap;
   overflow: visible;
   z-index: 100;
@@ -145,9 +133,5 @@
 }
 
 .textAlt {
-  color: $color-red-hover;
-  transform-origin: left;
-  background-color: transparent;
-
-  transform: translateX(0%) rotate(90deg) scaleX(0);
+  background-color: rgba($color-white, 1);
 }

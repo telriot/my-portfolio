@@ -15,8 +15,8 @@ function MainNav(props) {
   const [hover, setHover] = useState(false)
   let navbar = cx({
     navbar: true,
-    navbarXSShifted: !isXS && origin === "projects",
-    navRight: position === "right",
+    //navbarXSShifted: !isXS && origin === "projects",
+    //navRight: position === "right",
   })
   let navList = cx({
     navList: isXS,

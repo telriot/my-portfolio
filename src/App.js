@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react"
 import About from "./components/about/About"
 import Contact from "./components/contact/Contact"
 import LandingSplit from "./components/landing/LandingSplit"
+import Landing2 from "./components/landing/Landing2"
+
 import ProjectsSm from "./components/projects/ProjectsSm"
 import Projects from "./components/projects/Projects"
 import ProjectsLg from "./components/projects/ProjectsLg"
@@ -16,7 +18,7 @@ function App() {
   }, [])
   return (
     <React.Fragment>
-      <LandingSplit />
+      <Landing2 />
       {!isXS ? (
         <ProjectsSm />
       ) : !isLG ? (
